@@ -28,7 +28,7 @@
       days = getURLParameter('days') || 1;
 
       [1,3,2,4].forEach( function (i,e) {
-        var src = 'https://thingspeak.com/channels/18136/charts/'+i+'?width=auto&height=auto&days='+days+'&average=10&dynamic=true&export=true'
+        var src = 'https://thingspeak.com/channels/18136/charts/'+i+'?width=auto&height=auto&days='+days+'&average=15&dynamic=true&export=true'
         var inner = '<iframe src="'+src+'"></iframe>'
         document.getElementById("charts").innerHTML += inner;
       })
