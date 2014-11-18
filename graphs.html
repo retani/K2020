@@ -1,0 +1,43 @@
+<html>
+
+  <head>
+    <title>K2020</title>
+    <style>
+      body {
+        height: 100vh;
+      }
+      body, #charts, iframe {
+        margin:0;
+        padding:0;
+        border:none;
+      }
+      #charts iframe {
+        width:50%;
+        height:50%;
+        float:left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="charts">
+    </div>
+
+    <script>
+      function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+        }
+
+      days = getURLParameter('days') || 1;
+
+      [5,3,6,4].forEach( function (i,e) {
+        var src = 'https://thingspeak.com/channels/18136/charts/'+i+'?width=auto&height=auto&days='+days+'&average='+days*10+'&dynamic=true&export=true'
+        var inner = '<iframe src="'+src+'"></iframe>'
+        document.getElementById("charts").innerHTML += inner;
+      })
+
+    </script>
+
+  </body>
+
+</html>
