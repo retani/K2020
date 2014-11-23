@@ -93,7 +93,7 @@
 
         days = getURLParameter('days') || 1;
 
-        [1,5,3,6,4].forEach( function (i,e) {
+        [1,5,3,4,6].forEach( function (i,e) {
           var src = 'https://thingspeak.com/channels/18136/charts/'+i+'?width=auto&height=auto&days='+days+'&average='+days*10+'&dynamic=true&export=true'
           var inner = '<iframe src="'+src+'"></iframe>'
           document.getElementById("charts").innerHTML += inner;
